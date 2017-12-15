@@ -1,0 +1,8 @@
+interfaces:
+  loopback:
+    ip_address: "12.12.12.12"
+  fabric:
+    - id: "swp1"
+      ip_address: "172.2.1.1"
+    - id: "swp2"
+      ip_address: "172.2.2.1"

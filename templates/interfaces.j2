@@ -1,0 +1,30 @@
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+    address {{ interfaces.loopback.ip_address }}/32
+
+# The primary network interface
+auto eth0
+iface eth0
+    address {{ ansible_ssh_host }}/24
+
+# Fabric interfaces
+{% if 'fabric' in interfaces %}
+{% for interface in interfaces.fabric %}
+auto {{ interface.id }}
+iface {{ interface.id }}
+    address {{ interface.ip_address }}/24
+
+{% endfor %}
+{% endif %} 
+
+# Host interfaces
+{% if 'host' in interfaces %}
+{% for interface in interfaces.host %}
+auto {{ interface.id }}
+iface {{ interface.id }}
+    address {{ interface.ip_address }}/24
+
+{% endfor %}
+{% endif %}

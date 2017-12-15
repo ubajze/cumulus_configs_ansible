@@ -1,0 +1,11 @@
+[leafs]
+leaf01 ansible_ssh_host=192.168.35.201
+leaf02 ansible_ssh_host=192.168.35.202
+
+[spines]
+spine01 ansible_ssh_host=192.168.35.203
+spine02 ansible_ssh_host=192.168.35.204
+
+[all:vars]
+ansible_sudo_pass=CumulusLinux!
+ansible_user=cumulus

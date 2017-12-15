@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+  become_method: sudo
+
+  tasks:
+  - name: "Remove all NCLU configuration"
+    nclu:
+      commands:
+        - del all
+      commit: yes
+
+

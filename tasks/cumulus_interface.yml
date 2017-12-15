@@ -1,0 +1,14 @@
+---
+#- hosts: all
+#  #remote_user: cumulus
+#  become: yes
+#  become_method: sudo
+
+
+#tasks:
+  - name: "Create a network interface file"
+    template: src=./templates/interfaces.j2 dest=/etc/network/interfaces
+
+  - name: "Restart networking"
+    shell: ifreload -a
+
